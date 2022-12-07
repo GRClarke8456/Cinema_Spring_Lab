@@ -34,11 +34,11 @@ public class MovieController {
         }
     }
 
-    @PostMapping
-    public ResponseEntity<Reply> newMovie(@RequestBody Movie movie, @PathVariable int id){
-        Reply reply = movieService.addNewMovie(movie, id);
-        return new ResponseEntity<>(reply, HttpStatus.CREATED);
-    }
+//    @PostMapping
+//    public ResponseEntity<Reply> newMovie(@RequestBody Movie movie, @PathVariable int id){
+//        Reply reply = movieService.addNewMovie(movie, id);
+//        return new ResponseEntity<>(reply, HttpStatus.CREATED);
+//    }
 
 //    Created in the review
 //    Don't put a path variable

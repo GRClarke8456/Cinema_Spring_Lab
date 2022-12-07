@@ -28,12 +28,12 @@ public class MovieService {
         return movieRepository.findById(id);
     }
 
-    public Reply addNewMovie(Movie movieListing, int id){
-        Movie movie = movieRepository.findById(id).get();
-        this.movies.add(movieListing);
-        movieRepository.save(movie);
-        return new Reply("Add a new movie");
-    }
+//    public Reply addNewMovie(Movie movieListing, int id){
+//        Movie movie = movieRepository.findById(id).get();
+//        this.movies.add(movieListing);
+//        movieRepository.save(movie);
+//        return new Reply("Add a new movie");
+//    }
 
 //    Review's code
     public Movie saveNewMovie(Movie movie){
@@ -41,7 +41,7 @@ public class MovieService {
         return movie;
     }
 
-    
+
 
 
 }
