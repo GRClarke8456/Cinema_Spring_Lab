@@ -34,4 +34,14 @@ public class MovieService {
         movieRepository.save(movie);
         return new Reply("Add a new movie");
     }
+
+//    Review's code
+    public Movie saveNewMovie(Movie movie){
+        movieRepository.save(movie);
+        return movie;
+    }
+
+    
+
+
 }

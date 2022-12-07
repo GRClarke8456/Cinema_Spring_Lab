@@ -18,14 +18,7 @@ public class MovieController {
     @Autowired
     MovieService movieService;
 
-
-    @PostMapping
-    public ResponseEntity<Reply> newMovie(@RequestBody Movie movie, @PathVariable int id){
-        Reply reply = movieService.addNewMovie(movie, id);
-        return new ResponseEntity<>(reply, HttpStatus.CREATED);
-    }
-
-    @GetMapping("/listings")
+    @GetMapping
     public ResponseEntity<List<Movie>> getAllMovies(){
         List<Movie> movies = movieService.displayAllCurrentMovieListings();
         return new ResponseEntity<>(movies, HttpStatus.OK);
@@ -40,4 +33,19 @@ public class MovieController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
+
+    @PostMapping
+    public ResponseEntity<Reply> newMovie(@RequestBody Movie movie, @PathVariable int id){
+        Reply reply = movieService.addNewMovie(movie, id);
+        return new ResponseEntity<>(reply, HttpStatus.CREATED);
+    }
+
+//    Created in the review
+//    Don't put a path variable
+    @PostMapping
+    public ResponseEntity<Movie> addNewMovie(@RequestBody Movie movie){
+        movieService.saveNewMovie(movie);
+        return new ResponseEntity<>(movie, HttpStatus.CREATED);
+    }
+
 }
